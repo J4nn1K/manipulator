@@ -7,7 +7,7 @@ from std_msgs.msg import String
 from sensor_msgs.msg import Joy
 
 
-class KeyboardControlNode():
+class GamepadControlNode():
     
     def __init__(self, name):
         rospy.init_node(name)
@@ -45,10 +45,10 @@ class KeyboardControlNode():
         msg = String()
         msg.data = self.manipulator_state
         self.manipulator_pub.publish(msg)
-        rospy.loginfo("Manipulator State: %s", msg.data)
+        #rospy.loginfo("Manipulator State: %s", msg.data)
 
 def main():
-    node = KeyboardControlNode("keyboard")
+    node = GamepadControlNode("gamepad")
     node.run()
 
 if __name__ == "__main__":
