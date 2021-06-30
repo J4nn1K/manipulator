@@ -1,0 +1,6 @@
+<launch>
+    <arg name="vehicle_name" default="klopsi"/>
+    <group ns="$(arg vehicle_name)">
+        <node name="command_sender" pkg="manipulator" type="command_sender.py"></node>
+    </group>
+</launch>
